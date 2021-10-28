@@ -67,8 +67,9 @@
         nvshang1.visible=true;
         app.stage.addChild(nvshang1);
         nvshang.push(nvshang1);
-//      nvshang1.interactive = true;
-//		nvshang1.on("click",chunvshang1); 
+        nvshang1.interactive = true;
+		nvshang1.on("click",chunvshang1); 
+		nvshang1.on("touchstart",chunvshang1); 
 		var flag11=0;
 		var nvshang11= new PIXI.Sprite.fromImage("res/nvshang1.png");
 			nvshang11.y=90;
@@ -99,6 +100,7 @@
         nvshang.push(nvshang2);
         nvshang2.interactive = true;
 		nvshang2.on("click",chunvshang2); 
+		nvshang2.on("touchstart",chunvshang2); 
 		var nvshang22= new PIXI.Sprite.fromImage("res/nvshang2.png");
 			nvshang22.y=117;
         	nvshang22.x=124;
@@ -128,6 +130,7 @@
         nvshang.push(nvshang3); 
         nvshang3.interactive = true;
 		nvshang3.on("click",chunvshang3); 
+		nvshang3.on("touchstart",chunvshang3); 
 		var nvshang33= new PIXI.Sprite.fromImage("res/nvshang3.png");
 			nvshang33.y=112;
         	nvshang33.x=118;
@@ -164,6 +167,7 @@
         nvxia.push(nvxia1); 
         nvxia1.interactive = true;
 		nvxia1.on("click",chunvxia11); 
+		nvxia1.on("touchstart",chunvxia11); 
 		var flag21=0;
 		var nvxia11= new PIXI.Sprite.fromImage("res/nvxia1.png");
 			nvxia11.y=158;
@@ -194,6 +198,7 @@
         nvxia.push(nvxia2);   
         nvxia2.interactive = true;
 		nvxia2.on("click",chunvxia22); 
+		nvxia2.on("touchstart",chunvxia22); 
 		var flag22=0;
 		var nvxia22= new PIXI.Sprite.fromImage("res/nvxia2.png");
 			nvxia22.y=160;
@@ -223,6 +228,7 @@
         nvxia.push(nvxia3);
         nvxia3.interactive = true;
 		nvxia3.on("click",chunvxia33); 
+		nvxia3.on("touchstart",chunvxia33); 
 		var flag23=0;
 		var nvxia33= new PIXI.Sprite.fromImage("res/nvxia3.png");
 			nvxia33.y=176;
