@@ -15,50 +15,66 @@
         var bg = new PIXI.Sprite.fromImage("res/bg.png");
         app.stage.addChild(bg);
         var jing = new PIXI.Sprite.fromImage("res/jing.png");
-        jing.x=300;
-        jing.y=1750;
+        jing.x=100;
+        jing.y=580;
+        jing.scale.x=0.33;
+        jing.scale.y=0.33;
         app.stage.addChild(jing);
         var boy=new PIXI.Sprite.fromImage("res/boy.png");
         app.stage.addChild(boy);
-        boy.y=900;
+        boy.y=300;
+        boy.scale.x=0.33;
+        boy.scale.y=0.33;
         var girl= new PIXI.Sprite.fromImage("res/girl.png");
-        girl.y=770;
+        girl.y=260;
+        girl.scale.x=0.33;
+        girl.scale.y=0.33;
         app.stage.addChild(girl);
         var nv= new PIXI.Sprite.fromImage("res/nv.png");
         
         
         //女
-        nv.y=150;
-        nv.x=350;
-        nv.scale.x=0.9;
-        nv.scale.y=0.9;
+        nv.y=50;
+        nv.x=113;
+        nv.scale.x=0.3;
+        nv.scale.y=0.3;
         app.stage.addChild(nv);
 		var xuanze= new PIXI.Sprite.fromImage("res/xuanze.png");
-        xuanze.y=1250;
+        xuanze.y=417;
+        xuanze.scale.x=0.33;
+        xuanze.scale.y=0.33;
         app.stage.addChild(xuanze);
         var shang= new PIXI.Sprite.fromImage("res/shang.png");
-        shang.y=1195;
+        shang.y=398;
+        shang.scale.x=0.33;
+        shang.scale.y=0.33;
         app.stage.addChild(shang);
         var xia= new PIXI.Sprite.fromImage("res/xia.png");
-        xia.y=1205;
-        xia.x=110;
+        xia.y=402;
+        xia.x=39;
+        xia.scale.x=0.33;
+        xia.scale.y=0.33;
         app.stage.addChild(xia);
         
         //女上
         var nvshang = [];  
         
         var nvshang1= new PIXI.Sprite.fromImage("res/nvshang1.png");
-        nvshang1.y=1250;
-        nvshang1.x=75;
+        nvshang1.y=420;
+        nvshang1.x=25;
+        nvshang1.scale.x=0.33;
+        nvshang1.scale.y=0.33;
         nvshang1.visible=true;
         app.stage.addChild(nvshang1);
         nvshang.push(nvshang1);
-        nvshang1.interactive = true;
-		nvshang1.on("click",chunvshang1); 
+//      nvshang1.interactive = true;
+//		nvshang1.on("click",chunvshang1); 
 		var flag11=0;
 		var nvshang11= new PIXI.Sprite.fromImage("res/nvshang1.png");
-			nvshang11.y=270;
-        	nvshang11.x=370;
+			nvshang11.y=90;
+        	nvshang11.x=120;
+        	nvshang11.scale.x=0.33;
+        	nvshang11.scale.y=0.33;
         	app.stage.addChild(nvshang11);
         	nvshang11.visible=false;
 		function chunvshang1(){
@@ -74,20 +90,20 @@
         
         
         var nvshang2= new PIXI.Sprite.fromImage("res/nvshang2.png");
-        nvshang2.y=1350;
-        nvshang2.x=430;
-        nvshang2.scale.x=1.1;
-        nvshang2.scale.y=1.1;
+        nvshang2.y=450;
+        nvshang2.x=143;
+        nvshang2.scale.x=1.1*0.33;
+        nvshang2.scale.y=1.1*0.33;
         nvshang2.visible=true;
         app.stage.addChild(nvshang2);
         nvshang.push(nvshang2);
         nvshang2.interactive = true;
 		nvshang2.on("click",chunvshang2); 
 		var nvshang22= new PIXI.Sprite.fromImage("res/nvshang2.png");
-			nvshang22.y=350;
-        	nvshang22.x=380;
-        	nvshang22.scale.x=1.1;
-        	nvshang22.scale.y=1.1;
+			nvshang22.y=117;
+        	nvshang22.x=124;
+        	nvshang22.scale.x=1.1*0.33;
+        	nvshang22.scale.y=1.1*0.33;
         	nvshang22.visible=false;
         	app.stage.addChild(nvshang22);
         var flag22=0;
@@ -103,16 +119,20 @@
 		}
         
         var nvshang3= new PIXI.Sprite.fromImage("res/nvshang3.png");
-        nvshang3.y=1330;
-        nvshang3.x=780;
+        nvshang3.y=445;
+        nvshang3.x=260;
+        nvshang3.scale.x=0.33;
+        nvshang3.scale.y=0.33;
         nvshang3.visible=true;
         app.stage.addChild(nvshang3);
         nvshang.push(nvshang3); 
         nvshang3.interactive = true;
 		nvshang3.on("click",chunvshang3); 
 		var nvshang33= new PIXI.Sprite.fromImage("res/nvshang3.png");
-			nvshang33.y=350;
-        	nvshang33.x=363;
+			nvshang33.y=112;
+        	nvshang33.x=118;
+        	nvshang33.scale.x=0.33;
+        	nvshang33.scale.y=0.33;
         	nvshang33.visible=false;
         	app.stage.addChild(nvshang33);
         var flag33=0;
@@ -127,16 +147,18 @@
 			}
 		}
         
-//  	for(var i=0;i<nvshang.length;i++){
-//      	nvshang[i].visible=false;
-//  	}
+    	for(var i=0;i<nvshang.length;i++){
+        	nvshang[i].visible=false;
+    	}
     	
     	//女下
     	var nvxia = [];  
         
         var nvxia1= new PIXI.Sprite.fromImage("res/nvxia1.png");
-        nvxia1.y=1270;
-        nvxia1.x=105;
+        nvxia1.y=423;
+        nvxia1.x=35;
+        nvxia1.scale.x=0.33;
+        nvxia1.scale.y=0.33;
         nvxia1.visible=true;
         app.stage.addChild(nvxia1);
         nvxia.push(nvxia1); 
@@ -144,10 +166,10 @@
 		nvxia1.on("click",chunvxia11); 
 		var flag21=0;
 		var nvxia11= new PIXI.Sprite.fromImage("res/nvxia1.png");
-			nvxia11.y=475;
-        	nvxia11.x=380;
-        	nvxia11.scale.x=1.6;
-        	nvxia11.scale.y=1.6;
+			nvxia11.y=158;
+        	nvxia11.x=125;
+        	nvxia11.scale.x=1.6*0.33;
+        	nvxia11.scale.y=1.6*0.33;
         	app.stage.addChild(nvxia11);
         	nvxia11.visible=false;
 		function chunvxia11(){
@@ -163,8 +185,10 @@
 
         
         var nvxia2= new PIXI.Sprite.fromImage("res/nvxia2.png");
-        nvxia2.y=1280;
-        nvxia2.x=430;
+        nvxia2.y=427;
+        nvxia2.x=143;
+        nvxia2.scale.x=0.33;
+        nvxia2.scale.y=0.33;
         nvxia2.visible=true;
         app.stage.addChild(nvxia2);
         nvxia.push(nvxia2);   
@@ -172,10 +196,10 @@
 		nvxia2.on("click",chunvxia22); 
 		var flag22=0;
 		var nvxia22= new PIXI.Sprite.fromImage("res/nvxia2.png");
-			nvxia22.y=475;
-        	nvxia22.x=325;
-        	nvxia22.scale.x=1.6;
-        	nvxia22.scale.y=1.6;
+			nvxia22.y=160;
+        	nvxia22.x=105;
+        	nvxia22.scale.x=1.6*0.33;
+        	nvxia22.scale.y=1.6*0.33;
         	app.stage.addChild(nvxia22);
         	nvxia22.visible=false;
 		function chunvxia22(){
@@ -190,8 +214,10 @@
 		}
         
         var nvxia3= new PIXI.Sprite.fromImage("res/nvxia3.png");
-        nvxia3.y=1310;
-        nvxia3.x=830;
+        nvxia3.y=438;
+        nvxia3.x=277;
+        nvxia3.scale.x=0.33;
+        nvxia3.scale.y=0.33;
         nvxia3.visible=true;
         app.stage.addChild(nvxia3);
         nvxia.push(nvxia3);
@@ -199,10 +225,10 @@
 		nvxia3.on("click",chunvxia33); 
 		var flag23=0;
 		var nvxia33= new PIXI.Sprite.fromImage("res/nvxia3.png");
-			nvxia33.y=530;
-        	nvxia33.x=390;
-        	nvxia33.scale.x=1.7;
-        	nvxia33.scale.y=1.6;
+			nvxia33.y=176;
+        	nvxia33.x=125;
+        	nvxia33.scale.x=1.7*0.33;
+        	nvxia33.scale.y=1.6*0.33;
         	app.stage.addChild(nvxia33);
         	nvxia33.visible=false;
 		function chunvxia33(){
@@ -217,10 +243,12 @@
 		}
 
         
-        for( i=0;i<nvxia.length;i++){
-        	nvxia[i].visible=false;
-    	}
+//      for( i=0;i<nvxia.length;i++){
+//      	nvxia[i].visible=false;
+//  	}
 
+
+		
 		//上的事件
 		shang.interactive = true;
 		shang.on("click",chushang); 
