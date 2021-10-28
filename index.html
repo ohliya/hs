@@ -30,16 +30,8 @@
         girl.scale.x=0.33;
         girl.scale.y=0.33;
         app.stage.addChild(girl);
-        var nv= new PIXI.Sprite.fromImage("res/nv.png");
         
-        
-        //女
-        nv.y=50;
-        nv.x=113;
-        nv.scale.x=0.3;
-        nv.scale.y=0.3;
-        app.stage.addChild(nv);
-		var xuanze= new PIXI.Sprite.fromImage("res/xuanze.png");
+        var xuanze= new PIXI.Sprite.fromImage("res/xuanze.png");
         xuanze.y=417;
         xuanze.scale.x=0.33;
         xuanze.scale.y=0.33;
@@ -55,6 +47,19 @@
         xia.scale.x=0.33;
         xia.scale.y=0.33;
         app.stage.addChild(xia);
+        
+        var sex=0;
+        
+        //女
+        var nv= new PIXI.Sprite.fromImage("res/nv.png");
+        var nvz=[];
+        
+        nv.y=50;
+        nv.x=113;
+        nv.scale.x=0.3;
+        nv.scale.y=0.3;
+        app.stage.addChild(nv);
+
         
         //女上
         var nvshang = [];  
@@ -108,14 +113,14 @@
         	nvshang22.scale.y=1.1*0.33;
         	nvshang22.visible=false;
         	app.stage.addChild(nvshang22);
-        var flag22=0;
+        var flag223=0;
 		function chunvshang2(){
-			if(flag22==0){
-				flag22=1;
+			if(flag223==0){
+				flag223=1;
 				nvshang22.visible=true;
 			}
 			else{
-				fla22=0;
+				flag223=0;
 				nvshang22.visible=false;
 			}
 		}
@@ -145,14 +150,14 @@
 				nvshang33.visible=true;
 			}
 			else{
-				fla33=0;
+				flag33=0;
 				nvshang33.visible=false;
 			}
 		}
         
-    	for(var i=0;i<nvshang.length;i++){
-        	nvshang[i].visible=false;
-    	}
+//  	for(var i=0;i<nvshang.length;i++){
+//      	nvshang[i].visible=false;
+//  	}
     	
     	//女下
     	var nvxia = [];  
@@ -249,37 +254,329 @@
 		}
 
         
-//      for( i=0;i<nvxia.length;i++){
-//      	nvxia[i].visible=false;
-//  	}
+        for( i=0;i<nvxia.length;i++){
+        	nvxia[i].visible=false;
+    	}
 
 
 		
 		//上的事件
 		shang.interactive = true;
 		shang.on("click",chushang); 
+		shang.on("touchstart",chushang); 
+		
 		function chushang(){
+			if(sex==0){
 			for(var i=0;i<nvshang.length;i++){
         		nvshang[i].visible=true;
     		}
 			for(var i=0;i<nvxia.length;i++){
         		nvxia[i].visible=false;
     		}
+			for(var i=0;i<nanshang.length;i++){
+        		nanshang[i].visible=false;
+    		}
+			for(var i=0;i<nvxia.length;i++){
+        		nanxia[i].visible=false;
+    		}
+			}
+			else{
+			for(var i=0;i<nvshang.length;i++){
+        		nvshang[i].visible=false;
+    		}
+			for(var i=0;i<nvxia.length;i++){
+        		nvxia[i].visible=false;
+    		}
+			for(var i=0;i<nanshang.length;i++){
+        		nanshang[i].visible=true;
+    		}
+			for(var i=0;i<nanxia.length;i++){
+        		nanxia[i].visible=false;
+    		}
+			}
 		}
 		//下的事件
 		xia.interactive = true;
 		xia.on("click",chuxia); 
+		xia.on("touchstart",chuxia); 
 		function chuxia(){
-			
+			if(sex==0){
 			for(var i=0;i<nvxia.length;i++){
         		nvxia[i].visible=true;
     		}
 			for(var i=0;i<nvshang.length;i++){
         		nvshang[i].visible=false;
     		}
+			for(var i=0;i<nanshang.length;i++){
+        		nanshang[i].visible=false;
+    		}
+			for(var i=0;i<nanxia.length;i++){
+        		nanxia[i].visible=false;
+    		}
+			}
+			else{
+			for(var i=0;i<nvxia.length;i++){
+        		nvxia[i].visible=false;
+    		}
+			for(var i=0;i<nvshang.length;i++){
+        		nvshang[i].visible=false;
+    		}
+			for(var i=0;i<nanshang.length;i++){
+        		nanshang[i].visible=false;
+    		}
+			for(var i=0;i<nanxia.length;i++){
+        		nanxia[i].visible=true;
+    		}
+			}
 		}
 		
-	
+		nvz.push(nv);
+		nvz.push(nvshang1);
+//		nvz.push(nvshang11);
+		nvz.push(nvshang2);
+//		nvz.push(nvshang22);
+		nvz.push(nvshang3);
+//		nvz.push(nvshang33);
+		girl.interactive=true;
+		girl.on("click",chunv);
+		girl.on("touchstart",chunv);
+		function chunv(){
+			sex=0;
+//			if(sex==0){
+				for( i=0;i<nvz.length;i++){
+        			nvz[i].visible=true;
+    			}
+				for( i=0;i<nanz.length;i++){
+        			nanz[i].visible=false;
+    			}
+//			}
+		}
+		
+		var nanz=[];
+        var nan= new PIXI.Sprite.fromImage("res/nan.png");
+        nan.y=50;
+        nan.x=113;
+        nan.scale.x=0.3;
+        nan.scale.y=0.3;
+        app.stage.addChild(nan);
+        nan.visible=false;
+        
+        var nanshang = [];  
+        
+        var nanshang1= new PIXI.Sprite.fromImage("res/nanshang1.png");
+        nanshang1.y=435;
+        nanshang1.x=25;
+        nanshang1.scale.x=0.33;
+        nanshang1.scale.y=0.33;
+        nanshang1.visible=true;
+        app.stage.addChild(nanshang1);
+        nanshang.push(nanshang1);
+        nanshang1.interactive = true;
+		nanshang1.on("click",chunanshang1); 
+		nanshang1.on("touchstart",chunanshang1); 
+		var flag111=0;
+		var nanshang11= new PIXI.Sprite.fromImage("res/nanshang1.png");
+			nanshang11.y=110;
+        	nanshang11.x=110;
+        	nanshang11.scale.x=0.33*1.2;
+        	nanshang11.scale.y=0.33*1.2;
+        	app.stage.addChild(nanshang11);
+        	nanshang11.visible=false;
+		function chunanshang1(){
+			if(flag111==0){
+				flag111=1;
+				nanshang11.visible=true;
+			}
+			else{
+				flag111=0;
+				nanshang11.visible=false;
+			}
+		}
+        
+        
+        var nanshang2= new PIXI.Sprite.fromImage("res/nanshang2.png");
+        nanshang2.y=436;
+        nanshang2.x=143;
+        nanshang2.scale.x=1.1*0.33;
+        nanshang2.scale.y=1.1*0.33;
+        nanshang2.visible=true;
+        app.stage.addChild(nanshang2);
+        nanshang.push(nanshang2);
+        nanshang2.interactive = true;
+		nanshang2.on("click",chunanshang2); 
+		nanshang2.on("touchstart",chunanshang2); 
+		var nanshang22= new PIXI.Sprite.fromImage("res/nanshang2.png");
+			nanshang22.y=116;
+        	nanshang22.x=115;
+        	nanshang22.scale.x=1.25*0.33;
+        	nanshang22.scale.y=1.25*0.33;
+        	nanshang22.visible=false;
+        	app.stage.addChild(nanshang22);
+        var flag222=0;
+		function chunanshang2(){
+			if(flag222==0){
+				flag222=1;
+				nanshang22.visible=true;
+			}
+			else{
+				flag222=0;
+				nanshang22.visible=false;
+			}
+		}
+        
+        var nanshang3= new PIXI.Sprite.fromImage("res/nanshang3.png");
+        nanshang3.y=445;
+        nanshang3.x=260;
+        nanshang3.scale.x=0.33;
+        nanshang3.scale.y=0.33;
+        nanshang3.visible=true;
+        app.stage.addChild(nanshang3);
+        nanshang.push(nanshang3); 
+        nanshang3.interactive = true;
+		nanshang3.on("click",chunanshang3); 
+		nanshang3.on("touchstart",chunanshang3); 
+		var nanshang33= new PIXI.Sprite.fromImage("res/nanshang3.png");
+			nanshang33.y=112;
+        	nanshang33.x=112;
+        	nanshang33.scale.x=0.33*1.2;
+        	nanshang33.scale.y=0.33*1.2;
+        	nanshang33.visible=false;
+        	app.stage.addChild(nanshang33);
+        var flag333=0;
+        function chunanshang3(){
+			if(flag333==0){
+				flag333=1;
+				nanshang33.visible=true;
+			}
+			else{
+				flag333=0;
+				nanshang33.visible=false;
+			}
+		}
+        
+    	for(var i=0;i<nanshang.length;i++){
+        	nanshang[i].visible=false;
+    	}
+    	
+    	//男下
+    	var nanxia = [];  
+        
+        var nanxia1= new PIXI.Sprite.fromImage("res/nanxia1.png");
+        nanxia1.y=433;
+        nanxia1.x=35;
+        nanxia1.scale.x=0.33;
+        nanxia1.scale.y=0.33;
+        nanxia1.visible=true;
+        app.stage.addChild(nanxia1);
+        nanxia.push(nanxia1); 
+        nanxia1.interactive = true;
+		nanxia1.on("click",chunanxia11); 
+		nanxia1.on("touchstart",chunanxia11); 
+		var flag211=0;
+		var nanxia11= new PIXI.Sprite.fromImage("res/nanxia1.png");
+			nanxia11.y=188;
+        	nanxia11.x=125;
+        	nanxia11.scale.x=1.6*0.33;
+        	nanxia11.scale.y=1.6*0.33;
+        	app.stage.addChild(nanxia11);
+        	nanxia11.visible=false;
+		function chunanxia11(){
+			if(flag211==0){
+				flag211=1;
+				nanxia11.visible=true;
+			}
+			else{
+				flag211=0;
+				nanxia11.visible=false;
+			}
+		}
+
+        
+        var nanxia2= new PIXI.Sprite.fromImage("res/nanxia2.png");
+        nanxia2.y=437;
+        nanxia2.x=155;
+        nanxia2.scale.x=0.33;
+        nanxia2.scale.y=0.33;
+        nanxia2.visible=true;
+        app.stage.addChild(nanxia2);
+        nanxia.push(nanxia2);   
+        nanxia2.interactive = true;
+		nanxia2.on("click",chunanxia22); 
+		nanxia2.on("touchstart",chunanxia22); 
+		var flag221=0;
+		var nanxia22= new PIXI.Sprite.fromImage("res/nanxia2.png");
+			nanxia22.y=190;
+        	nanxia22.x=125;
+        	nanxia22.scale.x=1.6*0.33;
+        	nanxia22.scale.y=1.6*0.33;
+        	app.stage.addChild(nanxia22);
+        	nanxia22.visible=false;
+		function chunanxia22(){
+			if(flag221==0){
+				flag221=1;
+				nanxia22.visible=true;
+			}
+			else{
+				flag221=0;
+				nanxia22.visible=false;
+			}
+		}
+        
+        var nanxia3= new PIXI.Sprite.fromImage("res/nanxia3.png");
+        nanxia3.y=438;
+        nanxia3.x=277;
+        nanxia3.scale.x=0.33;
+        nanxia3.scale.y=0.33;
+        nanxia3.visible=true;
+        app.stage.addChild(nanxia3);
+        nanxia.push(nanxia3);
+        nanxia3.interactive = true;
+		nanxia3.on("click",chunanxia33); 
+		nanxia3.on("touchstart",chunanxia33); 
+		var flag231=0;
+		var nanxia33= new PIXI.Sprite.fromImage("res/nanxia3.png");
+			nanxia33.y=190;
+        	nanxia33.x=125;
+        	nanxia33.scale.x=1.7*0.33;
+        	nanxia33.scale.y=1.6*0.33;
+        	app.stage.addChild(nanxia33);
+        	nanxia33.visible=false;
+		function chunanxia33(){
+			if(flag231==0){
+				flag231=1;
+				nanxia33.visible=true;
+			}
+			else{
+				flag231=0;
+				nanxia33.visible=false;
+			}
+		}
+		for( i=0;i<nanxia.length;i++){
+        	nanxia[i].visible=false;
+    	}
+		
+		nanz.push(nan);
+		nanz.push(nanshang1);
+//		nanz.push(nanshang11);
+		nanz.push(nanshang2);
+//		nanz.push(nanshang22);
+		nanz.push(nanshang3);
+//		nanz.push(nanshang33);
+		boy.interactive=true;
+		boy.on("click",chunan);
+		boy.on("touchstart",chunan);
+		function chunan(){
+			sex=1;
+//			if(sex==1){
+				for( i=0;i<nvz.length;i++){
+        			nvz[i].visible=false;
+    			}
+				for( i=0;i<nanz.length;i++){
+        			nanz[i].visible=true;
+    			}
+//			}
+			
+		}
 
     </script>
 </body>
